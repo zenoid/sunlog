@@ -7,15 +7,15 @@ This script grabs and simplifies the data, and - thanks to the Forecast.IO API -
 
 ## Setup
 
-- "npm install"
+- **npm install**
 - Go to your Google Locations history: https://www.google.com/maps/timeline
 - Get the page cookies (for example, with this Chrome extension: https://chrome.google.com/webstore/detail/cookietxt-export/lopabhfecdfhgogdbojmaicoicjekelh)
 - Save them in a text file called "googleCookies" in the root folder
 - Create an account on Forecast.IO: https://developer.forecast.io/
 - Get an API key, and save it in a text file called "forecastIOApiKey" in the root folder
 - Open "get.js" and set your "startingDate" (the first day logged on Google Locations History, or the day to start from)
-- Launch "**node get**" to store all the locations in data/locations.json and all the weather conditions in data/weather.json
-- You can then launch "**node test**" to check if everything looks correct, and in the future you can use "**node update**" to append the missing days to the lists
+- Launch **node get** to store all the locations in data/locations.json and all the weather conditions in data/weather.json
+- You can then launch **node test** to check if everything looks correct, and in the future you can use **node update** to append the missing days to the lists
 
 
 ### Notes
