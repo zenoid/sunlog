@@ -14,11 +14,11 @@ This script grabs and simplifies the data, and - thanks to the Forecast.IO API -
 - Create an account on Forecast.IO: https://developer.forecast.io/
 - Get an API key, and save it in a text file called "forecastIOApiKey" in the root folder
 - Open "get.js" and set your "startingDate" (the first day logged on Google Locations History, or the day to start from)
-- Launch "node get" to store all the locations in data/locations.json and all the weather conditions in data/weather.json
-- You can then launch "node test" to check if everything looks correct, and in the future you can use "node update" to append the missing days to the lists
+- Launch "*node get*" to store all the locations in data/locations.json and all the weather conditions in data/weather.json
+- You can then launch "*node test*" to check if everything looks correct, and in the future you can use "*node update*" to append the missing days to the lists
 
 
-## Notes
+### Notes
 
 - For each day in the Google Locations history, the script stores the coordinates of the median sample
 - If a day is missing in the history, the coordinates of the previous day will be duplicated
