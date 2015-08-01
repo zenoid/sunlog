@@ -1,0 +1,9 @@
+{
+  "name": "sunlog",
+  "version": "1.0.0",
+  "devDependencies": {
+    "request": "latest",
+    "xml2js": "latest",
+    "cookies.txt": "latest"
+  }
+}
