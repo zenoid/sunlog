@@ -1,7 +1,7 @@
 
 var fs = require( 'fs' ),
-  locationsFile = 'data/locations.json',
-  weatherFile = 'data/weather.json',
+  locationsFile = __dirname + '/data/locations.json',
+  weatherFile = __dirname + '/data/weather.json',
   locationDays = 0,
   weatherDays = 0;
 
