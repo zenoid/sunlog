@@ -10,11 +10,11 @@ This script grabs and simplifies the data, and - thanks to the GoogleMaps and Fo
 - **npm install**
 - Open "get.js" and set your **startingDate** (the first day logged on Google Locations History, or the day to start from)
 - Create a **/private** folder, where you'll save 3 files:
-1. **googleCookies**: dump your Google cookies in JAR format, using this:
+  1. **googleCookies**: dump your Google cookies in JAR format, using this:
 https://github.com/proudlygeek/google-cookies-dump
-2. **gMapsApiKey**: get an API key for Google Maps:
+  2. **gMapsApiKey**: get an API key for Google Maps:
 https://developers.google.com/maps/documentation/javascript/get-api-key
-3. **forecastIOApiKey**: get an API key for Forecast.IO:
+  3. **forecastIOApiKey**: get an API key for Forecast.IO:
 https://developer.forecast.io
 
 ## Usage
