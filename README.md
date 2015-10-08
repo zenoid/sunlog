@@ -2,21 +2,26 @@ Sunlog
 ========
 
 Using the "Google Location" data, silently logged from your smartphone behind your back, you can have a detailed history of the places you've been.
-This script grabs and simplifies the data, and - thanks to the Forecast.IO API - gets the weather conditions for each past day, in each location.
+This script grabs and simplifies the data, and - thanks to the GoogleMaps and Forecast.IO API - stores the countries you've been and the weather conditions of each past day.
 
 
 ## Setup
 
 - **npm install**
-- Go to your Google Locations history: https://www.google.com/maps/timeline
-- Get the page cookies (for example, with this Chrome extension: https://chrome.google.com/webstore/detail/cookietxt-export/lopabhfecdfhgogdbojmaicoicjekelh)
-- Save them in a text file called "googleCookies" in the root folder
-- Create an account on Forecast.IO: https://developer.forecast.io/
-- Get an API key, and save it in a text file called "forecastIOApiKey" in the root folder
-- Open "get.js" and set your "startingDate" (the first day logged on Google Locations History, or the day to start from)
-- Launch **node get** to store all the locations in data/locations.json and all the weather conditions in data/weather.json
-- You can then launch **node test** to check if everything looks correct, and in the future you can use **node update** to append the missing days to the lists
+- Open "get.js" and set your **startingDate** (the first day logged on Google Locations History, or the day to start from)
+- Create a **/private** folder, where you'll save 3 files:
+1. **googleCookies**: dump your Google cookies in JAR format, using this:
+https://github.com/proudlygeek/google-cookies-dump
+2. **gMapsApiKey**: get an API key for Google Maps:
+https://developers.google.com/maps/documentation/javascript/get-api-key
+3. **forecastIOApiKey**: get an API key for Forecast.IO:
+https://developer.forecast.io
 
+## Usage
+
+- **node get** to store all the data in data/locations.json
+- **node update** to append new days to the list
+- **node test** to check how many days have been logged
 
 ### Notes
 
