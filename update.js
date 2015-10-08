@@ -1,31 +1,16 @@
 
 var fs = require( 'fs' ),
   parser = require( __dirname + '/lib/parser' ),
-  locationsFile = __dirname + '/data/locations.json',
-  startingDay;
+  locationsFile = __dirname + '/data/locations.json';
 
 fs.readFile( locationsFile, 'utf-8', function( err, fileContent ) {
   if ( err ) throw err;
 
-  var locationsData = JSON.parse( fileContent ),
-    lastDay = 0,
-    endingDay = new Date();
+  var locations = JSON.parse( fileContent ),
+    daysList = Object.keys( locations ),
+    lastDay = new Date( daysList[ daysList.length - 1 ] ),
+    startingDay = new Date( lastDay.setDate( lastDay.getDate() + 1 ) );
 
-  endingDay.setDate( endingDay.getDate() - 1 );
-
-  for ( var t in locationsData ) {
-    lastDay = Math.max( lastDay, t );
-  }
-  lastDay = new Date( lastDay );
-
-  if ( new Date( endingDay.getFullYear(), endingDay.getMonth(), endingDay.getDate() ) > lastDay ) {
-    startingDay = new Date( lastDay.getFullYear(), lastDay.getMonth(), lastDay.getDate() + 1 );
-    console.log( '\n----- UPDATING from ' + String( lastDay ).substring( 0, 15 ) + ' -----\n' );
-    parser.updateLocationHistory( startingDay, function( locations ){
-      parser.updateWeatherData( startingDay, locations );
-    });
-  } else {
-    console.log( '\n----- Already up-to-date -----\n' );
-  }
+  parser.updateLocationData( startingDay );
 
 });

@@ -1,6 +1,5 @@
 .DS_Store
 node_modules
-googleCookies
-forecastIOApiKey
+private
 data/locations.json
-data/weather.json
+sftp-config.json

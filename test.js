@@ -1,37 +1,20 @@
 
 var fs = require( 'fs' ),
   locationsFile = __dirname + '/data/locations.json',
-  weatherFile = __dirname + '/data/weather.json',
-  locationDays = 0,
-  weatherDays = 0;
+  locationDays = 0;
 
 fs.readFile( locationsFile, 'utf-8', function( err, fileContent ) {
   if ( err ) throw err;
 
-  console.log( '\n----- Locations -----\n' );
+  console.log( '\x1b[1m%s\x1b[0m', '\n----- Locations' );
 
   var locationsData = JSON.parse( fileContent );
 
   for ( var t in locationsData ) {
     locationDays++;
-    console.log( '' + new Date( +t ), locationsData[ t ].lat, locationsData[ t ].lon );
+    console.log( '' + t + ' | ' + locationsData[ t ].lat + ' ' + locationsData[ t ].lon + ' | ' + locationsData[ t ].country );
   }
 
-  fs.readFile( weatherFile, 'utf-8', function( err, fileContent ) {
-    if ( err ) throw err;
-
-    console.log( '\n----- Weather Conditions -----\n' );
-
-    var weatherData = JSON.parse( fileContent );
-
-    for ( var t in weatherData ) {
-      weatherDays++;
-      console.log( '' + new Date( +t ), weatherData[ t ].type );
-    }
-
-    console.log( '\n\t' + locationDays + ' locations logged' );
-    console.log( '\t' + weatherDays + ' weather conditions logged\n' );
-
-  });
+  console.log( '\n' + locationDays + ' locations logged\n' );
 
 });
